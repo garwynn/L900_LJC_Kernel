@@ -1,0 +1,1 @@
+cmd_drivers/interceptor/vpnclient.ko := /root/Kernel/toolchain/prebuilt/arm-eabi-4.4.3/bin/arm-eabi-ld -EL -r  -T /root/Kernel/L900_LJC_Kernel/scripts/module-common.lds --build-id  -o drivers/interceptor/vpnclient.ko drivers/interceptor/vpnclient.o drivers/interceptor/vpnclient.mod.o
