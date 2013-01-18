@@ -28,8 +28,11 @@ make headers_install
 # make modules
 time make -j8 CC="ccache $pwd/kernel-extras/arm-eabi-4.4.3/bin/arm-eabi-gcc" 2>&1 | tee ~/logs/$version.txt
 
-echo "making boot image"
+echo "Copy zImage"
 cp arch/arm/boot/zImage mkboot/
+echo "Copy Modules"
+find -name '*.ko' -exec cp -av {} mkboot/ramdisk-l900-tw/libs/modules \;
+echo "Making boot image..."
 cd mkboot
 ./img-l900-tw.sh
 cd ..

@@ -28,9 +28,9 @@ export LC_ALL
 
 if [ -z "$KBUILD_BUILD_VERSION" ]; then
 	if [ -r .version ]; then
-		VERSION=v0.1.1
+		VERSION=v0.1.2
 	else
-		VERSION=v0.1.1
+		VERSION=v0.1.2
 	fi
 else
 	VERSION=$KBUILD_BUILD_VERSION
@@ -47,9 +47,9 @@ else
 	LINUX_COMPILE_BY="Garwynn"
 fi
 if test -z "$KBUILD_BUILD_HOST"; then
-	LINUX_COMPILE_HOST=`hostname`
+	LINUX_COMPILE_HOST="SXTPBuildBox"
 else
-	LINUX_COMPILE_HOST=$KBUILD_BUILD_HOST
+	LINUX_COMPILE_HOST="SXTPBuildBox"
 fi
 
 UTS_VERSION="#$VERSION"
