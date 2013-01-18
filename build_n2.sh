@@ -3,7 +3,7 @@ make distclean
 # Directory "extras" must be available in top kernel directory. Sign scripts must also be available at ~/.gnome2/nautilus-scripts/SignScripts/
 # Edit CROSS_COMPILE to mirror local path. Edit "version" to any desired name or number but it cannot have spaces. 
 pwd=`readlink -f .`
-export CROSS_COMPILE=$pwd/kernel-extras/toolchains-4.4.3/bin/arm-eabi-
+export CROSS_COMPILE=~/Kernel/toolchain/prebuilt/arm-eabi-4.4.3/bin/arm-eabi-
 export ARCH=arm
 export version=Garwynn_LJC_v0.1.0
 

@@ -1,1 +1,0 @@
-cmd_arch/arm/mvp/commkm/commkm.ko := /root/Kernel/toolchain/prebuilt/arm-eabi-4.4.3/bin/arm-eabi-ld -EL -r  -T /root/Kernel/L900_LJC_Kernel/scripts/module-common.lds --build-id  -o arch/arm/mvp/commkm/commkm.ko arch/arm/mvp/commkm/commkm.o arch/arm/mvp/commkm/commkm.mod.o
