@@ -31,7 +31,7 @@ time make -j8 CC="ccache $pwd/kernel-extras/arm-eabi-4.4.3/bin/arm-eabi-gcc" 2>&
 echo "Copy zImage"
 cp arch/arm/boot/zImage mkboot/
 echo "Copy Modules"
-find -name '*.ko' -exec cp -av {} mkboot/ramdisk-l900-tw/libs/modules \;
+find -name '*.ko' -exec cp -av {} mkboot/ramdisk-l900-tw/lib/modules \;
 echo "Making boot image..."
 cd mkboot
 ./img-l900-tw.sh
