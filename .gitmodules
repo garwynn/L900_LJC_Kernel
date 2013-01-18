@@ -1,0 +1,3 @@
+[submodule "kernel-extras"]
+	path = kernel-extras
+	url = https://github.com/garwynn/L900_LJC_Kernel

@@ -70,4 +70,4 @@ rm -rf mkboot
 rm -rf zip
 echo "Done"
 
-geany ~/logs/$version.txt || exit 1
+# geany ~/logs/$version.txt || exit 1
