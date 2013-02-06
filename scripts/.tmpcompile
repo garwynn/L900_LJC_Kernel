@@ -1,0 +1,6 @@
+/* This file is auto generated, version v0.1.2 */
+#define UTS_MACHINE ""
+#define UTS_VERSION "#v0.1.2 Thu Jan 31 17:22:55 CST 2013"
+#define LINUX_COMPILE_BY "Garwynn"
+#define LINUX_COMPILE_HOST "SXTPBuildBox"
+#define LINUX_COMPILER "/root/Kernel/L900_LJC_Kernel/scripts/mkcompile_h: 1: /root/Kernel/L900_LJC_Kernel/scripts/mkcompile_h: -v: not found"

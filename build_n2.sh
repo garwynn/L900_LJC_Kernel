@@ -5,7 +5,7 @@ make distclean
 pwd=`readlink -f .`
 export CROSS_COMPILE=~/Kernel/toolchain/prebuilt/arm-eabi-4.4.3/bin/arm-eabi-
 export ARCH=arm
-export version=Garwynn_LJC_v0.1.1
+export version=Garwynn_LJC_v0.5.0
 
 # Determines the number of available logical processors and sets the work thread accordingly
 export JOBS="(expr 4 + $(grep processor /proc/cpuinfo | wc -l))"
