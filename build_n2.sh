@@ -5,7 +5,7 @@ make distclean
 pwd=`readlink -f .`
 export CROSS_COMPILE=~/Kernel/toolchain/prebuilt/arm-eabi-4.4.3/bin/arm-eabi-
 export ARCH=arm
-export version=Garwynn_LJC_v0.5.0
+export version=Garwynn_LJC_v0.5.1
 
 # Determines the number of available logical processors and sets the work thread accordingly
 export JOBS="(expr 4 + $(grep processor /proc/cpuinfo | wc -l))"
@@ -46,31 +46,34 @@ cd mkboot
 tar -H ustar -c boot.img > $TMPNM
 md5sum -t $TMPNM >> $TMPNM
 mv $TMPNM $TMPNM2
-mv $TMPNM2 ../out
+mv $TMPNM2 ../../
 
-echo "making signed zip"
-rm -rf zip/$version
-mkdir -p zip/$version
-mkdir -p zip/$version/system/lib/modules
+#echo "making signed zip"
+#rm -rf zip/$version
+#mkdir -p zip/$version
+#mkdir -p zip/$version/system/lib/modules
 
 # Find all modules that were just built and copy them into the working directory
-find -name '*.ko' -exec cp -av {} $pwd/zip/$version/system/lib/modules/ \;
-mv mkboot/boot.img zip/$version
-cp -R zip/META-INF-l900-gar zip/$version
-cd zip/$version
-mv META-INF-l900-gar META-INF
-zip -r ../tmp.zip ./
-cd ..
-java -classpath "$loc"testsign.jar testsign "tmp.zip" "$version"-"$date"-signed.zip
-rm tmp.zip
-mv *.zip ../out
-echo "Popped kernel available in the out directory"
-echo "Build log is avalable in ~/logs"
-echo "Cleaning kernel directory"
+#find -name '*.ko' -exec cp -av {} $pwd/zip/$version/system/lib/modules/ \;
+#mv mkboot/boot.img zip/$version
+#cp -R zip/META-INF-l900-gar zip/$version
+#cd zip/$version
+#mv META-INF-l900-gar META-INF
+#zip -r ../tmp.zip ./
+#cd ..
+#java -classpath "$loc"testsign.jar testsign "tmp.zip" "$version"-"$date"-signed.zip
+#rm tmp.zip
+#mv *.zip ../out
+#echo "Popped kernel available in the out directory"
+#echo "Build log is avalable in ~/logs"
+3echo "Cleaning kernel directory"
 # Clean up kernel tree
 cd $pwd
 rm -rf mkboot 
 rm -rf zip
+make clean
+make distclean
+make mrproper
 echo "Done"
 
 # geany ~/logs/$version.txt || exit 1
